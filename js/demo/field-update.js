@@ -9,7 +9,7 @@ $(document).ready(function () {
         sensor_ids.forEach(function (sensor_id, index) {
             const sensor_id_str = (sensor_id +1).toString()
 
-            GetSensorData(USER_ID, sensor_id, 0,
+            GetSensorDataLast(USER_ID, sensor_id,
                 function () {
                     const dataframe = JSON.parse(this.responseText)
                     //console.log(dataframe)

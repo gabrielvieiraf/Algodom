@@ -25,6 +25,15 @@ class GetSensorDataSince(Resource):
         return jsonify(data)
 
 
+class GetSensorDataLast(Resource):
+    def get(self, user_id, sensor_id):
+        db_name = DB_PATH + str(user_id) + '_sensor_' + str(sensor_id) + '_db.csv'
+        df = pd.read_csv(db_name, index_col=0)
+        data = df.tail(1).to_dict('records')
+
+        return jsonify(data)
+
+
 class GetSpendingForecastDataSince(Resource):
     def get(self, user_id, last_index):
         db_name = DB_PATH + str(user_id) + '_spending_forecast_db.csv'
@@ -35,6 +44,7 @@ class GetSpendingForecastDataSince(Resource):
 
 
 api.add_resource(GetSensorDataSince, '/<user_id>/sensor/<sensor_id>/data/from/<last_index>')
+api.add_resource(GetSensorDataLast, '/<user_id>/sensor/<sensor_id>/data/last')
 api.add_resource(GetSpendingForecastDataSince, '/<user_id>/spending_forecast/data/from/<last_index>')
 
 
