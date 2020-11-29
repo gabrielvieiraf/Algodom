@@ -47,7 +47,7 @@ var myLineChart = new Chart(ctx, {
             pointHitRadius: 10,
             pointBorderWidth: 2,
             data: [],
-    }],
+        }],
     },
     options: {
         maintainAspectRatio: false,
@@ -61,8 +61,9 @@ var myLineChart = new Chart(ctx, {
         },
         scales: {
             xAxes: [{
+                type: 'time',
                 time: {
-                    unit: 'date'
+                    unit: 'month',
                 },
                 gridLines: {
                     display: false,
@@ -71,7 +72,7 @@ var myLineChart = new Chart(ctx, {
                 ticks: {
                     maxTicksLimit: 7
                 }
-      }],
+            }],
             yAxes: [{
                 ticks: {
                     maxTicksLimit: 5,
@@ -88,7 +89,7 @@ var myLineChart = new Chart(ctx, {
                     borderDash: [2],
                     zeroLineBorderDash: [2]
                 }
-      }],
+            }],
         },
         legend: {
             display: false
@@ -128,8 +129,7 @@ $(document).ready(function () {
                 //console.log(dataframe)
                 for (datarow of dataframe) {
                     var date = new Date(datarow.timestamp * 1000)
-                    const label = date.getMonth() + '/' + date.getYear()
-                    addData(myLineChart, label, datarow.value)
+                    addData(myLineChart, date, datarow.value)
                 }
             }
         )
