@@ -305,7 +305,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 01 - Temperatura</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">10 ºC</div>
+                                            <div id="freezer_1_temperature" class="h2 mb-0 font-weight-bold text-gray-800">10 ºC</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -325,7 +325,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 01 - Status</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">ON</div>
+                                            <div id="freezer_1_status" class="h2 mb-0 font-weight-bold text-gray-800">ON</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -344,7 +344,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 01 -  Tensão</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">223 V</div>
+                                            <div id="freezer_1_voltage" class="h2 mb-0 font-weight-bold text-gray-800">223 V</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -363,7 +363,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 01 -  Corrente</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">10 A</div>
+                                            <div id="freezer_1_current" class="h2 mb-0 font-weight-bold text-gray-800">10 A</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -382,7 +382,7 @@
 					    <div class="h5 mb-0 font-weight-bold text-white">Freezer 02 - Temperatura</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-white">30 ºC</div>
+                                            <div id="freezer_2_temperature" class="h2 mb-0 font-weight-bold text-white">30 ºC</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -401,7 +401,7 @@
 					    <div class="h5 mb-0 font-weight-bold text-white ">Freezer 02 - Status</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-white">OFF</div>
+                                            <div id="freezer_2_status" class="h2 mb-0 font-weight-bold text-white">OFF</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -420,7 +420,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 02 -  Tensão</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">223 V</div>
+                                            <div id="freezer_2_voltage" class="h2 mb-0 font-weight-bold text-gray-800">223 V</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -439,7 +439,7 @@
 					    <div class="h5 mb-0 font-weight-bold ">Freezer 02 -  Corrente</div>
 					   
 					    <br>
-                                            <div class="h2 mb-0 font-weight-bold text-gray-800">0 A</div>
+                                            <div id="freezer_2_current" class="h2 mb-0 font-weight-bold text-gray-800">0 A</div>
 					</center>
                                         </div>
                                         <div class="col-auto">
@@ -504,13 +504,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/api-helper.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/field-update.js"></script>
 
 </body>
 
