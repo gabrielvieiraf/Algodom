@@ -22,7 +22,9 @@ class GetSensorDataSince(Resource):
         df = pd.read_csv(db_name, index_col=0)
         data = df.iloc[int(last_index):].to_dict('records')
 
-        return jsonify(data)
+        response = jsonify(data)
+        #response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 class GetSensorDataLast(Resource):
@@ -31,7 +33,9 @@ class GetSensorDataLast(Resource):
         df = pd.read_csv(db_name, index_col=0)
         data = df.tail(1).to_dict('records')
 
-        return jsonify(data)
+        response = jsonify(data)
+        #response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 class GetSpendingForecastDataSince(Resource):
@@ -40,7 +44,9 @@ class GetSpendingForecastDataSince(Resource):
         df = pd.read_csv(db_name, index_col=0)
         data = df.iloc[int(last_index):].to_dict('records')
 
-        return jsonify(data)
+        response = jsonify(data)
+        #response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 api.add_resource(GetSensorDataSince, '/<user_id>/sensor/<sensor_id>/data/from/<last_index>')
@@ -49,5 +55,5 @@ api.add_resource(GetSpendingForecastDataSince, '/<user_id>/spending_forecast/dat
 
 
 if __name__ == '__main__':
-    PORT = 5002
+    PORT = 2083
     app.run(port=str(PORT))
