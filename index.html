@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -154,7 +155,7 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                     
+
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -364,7 +365,7 @@
                                 </div>
                                 <br>
                             </div>
-                           
+
                         </div>
 
                         <!-- Pie Chart -->
@@ -422,7 +423,8 @@
                                             src="img/undraw_posting_photo.svg" alt="">
                                     </div>
                                     <p>Sabemos que <strong>Você</strong>, nosso cliente, tem um dia-a-dia corrido.
-                                        Por isso trabalhamos para oferecer a maneira mais eficiente de visualização dos seus dados de consumo.
+                                        Por isso trabalhamos para oferecer a maneira mais eficiente de visualização dos
+                                        seus dados de consumo.
                                         Nossa plataforma funciona perfeitamente nos <strong>Tablets e
                                             celulares</strong>, basta acessar pelo seu navegador!</p>
                                     <a target="_blank" rel="nofollow" href="https://algodom.wixsite.com/site">Todas as
@@ -490,13 +492,37 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/api-helper.js"></script>
+   
 
+    <!-- Alerta -->
+    <script>
+        setTimeout(myAlert, 8000);
+        function myAlert() {
+            const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  background: 'red',
+  color:'white',
+  showConfirmButton: false,
+  timer: 6000,
+  timerProgressBar: true
+})
+
+Toast.fire({
+    html: '<h5 style="color:white; font-weight: bold; cursor: pointer;" onClick= window.location.href="Freezers.html"><bold>O freezer 02 está desligado.<bold></h5>'
+}) 
+        } 
+    </script>
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.bundle.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
+   
+   
 
 </body>
 
