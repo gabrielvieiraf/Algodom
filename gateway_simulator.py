@@ -5,10 +5,9 @@ import time
 from datetime import datetime
 import pandas as pd
 
-
-def gateway_simulator(user_id: int, sensor_id: int, verbose=False):
+def gateway_simulator(user_id:int, sensor_id: int, verbose=False):
     def timestamp_parser(epoch):
-        return pd.to_datetime(epoch, unit='ms')
+        return pd.to_datetime(epoch, unit='s')
 
     base_filename = str(user_id) + '_sensor_' + str(sensor_id) + '_db.csv'
 
@@ -33,7 +32,8 @@ def gateway_simulator(user_id: int, sensor_id: int, verbose=False):
         print('out:', len(df_out))
 
     # buscar o último horário
-    time_last_out = pd.Timestamp(df_out.tail(1).index.to_numpy()[0]).to_pydatetime()
+    time_last_out = \
+        pd.Timestamp(df_out.tail(1).index.to_numpy()[0]).to_pydatetime()
     time_now = datetime.now().replace(microsecond=0, second=0, minute=0)
     if verbose:
         print('last:', time_last_out)
@@ -52,18 +52,17 @@ def gateway_simulator(user_id: int, sensor_id: int, verbose=False):
             print('out:', len(df_out))
 
         # Convert to epoch in ms
-        df_out.index = (df_out.index - pd.Timestamp("1970-01-01")) // pd.Timedelta('1ms')
+        df_out.index = (df_out.index - pd.Timestamp("1970-01-01")) // pd.Timedelta('1s')
 
         # salva
         df_out.to_csv(output_filename, float_format='%.4f')
 
-
 if __name__ == '__main__':
     starttime = time.time()
-    PERIOD = 10.0
+    PERIOD = 60.0
     USER_ID = 0
 
     while True:
         for sensor_id in [0, 1]:
-            gateway_simulator(USER_ID, sensor_id)
+            gateway_simulator(USER_ID, sensor_id, verbose=False)
             time.sleep(PERIOD - ((time.time() - starttime) % PERIOD))

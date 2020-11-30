@@ -19,7 +19,7 @@ api = Api(app)
 class GetSensorDataSince(Resource):
     def get(self, user_id, sensor_id, last_index):
         db_name = DB_PATH + str(user_id) + '_sensor_' + str(sensor_id) + '_db.csv'
-        df = pd.read_csv(db_name, index_col=0)
+        df = pd.read_csv(db_name)
         data = df.iloc[int(last_index):].to_dict('records')
 
         response = jsonify(data)
@@ -30,7 +30,7 @@ class GetSensorDataSince(Resource):
 class GetSensorDataLast(Resource):
     def get(self, user_id, sensor_id):
         db_name = DB_PATH + str(user_id) + '_sensor_' + str(sensor_id) + '_db.csv'
-        df = pd.read_csv(db_name, index_col=0)
+        df = pd.read_csv(db_name)
         data = df.tail(1).to_dict('records')
 
         response = jsonify(data)
@@ -41,7 +41,7 @@ class GetSensorDataLast(Resource):
 class GetSpendingForecastDataSince(Resource):
     def get(self, user_id, last_index):
         db_name = DB_PATH + str(user_id) + '_spending_forecast_db.csv'
-        df = pd.read_csv(db_name, index_col=0)
+        df = pd.read_csv(db_name)
         data = df.iloc[int(last_index):].to_dict('records')
 
         response = jsonify(data)

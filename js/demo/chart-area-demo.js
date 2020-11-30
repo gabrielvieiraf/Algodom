@@ -125,7 +125,7 @@ $(document).ready(function () {
         const sensor_id = 0
         GetSpendingForecastData(USER_ID, 0,
             function () {
-                const dataframe = JSON.parse(this.responseText)
+		const dataframe = JSON.parse(this.responseText);
                 //console.log(dataframe)
                 for (datarow of dataframe) {
                     var date = new Date(datarow.timestamp * 1000)
