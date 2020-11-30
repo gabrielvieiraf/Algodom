@@ -1,4 +1,4 @@
-const REST_API_URL = "http://ec2-52-32-33-15.us-west-2.compute.amazonaws.com:5002/"
+const REST_API_URL = "https://algodom.ml:2083/"
 const USER_ID = "0"
 
 function GetSensorData(user_id, sensor_id, from_index, fCallback, /* cb args  */ ) {
