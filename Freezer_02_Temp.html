@@ -316,16 +316,77 @@
                         </div>
                     </div>
 
-                    <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Histórico de Gastos (R$)</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
+                        
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Parâmetros</h6>
+                                </div>
+                                <br>
+                                <center>
+                                    <a>
+                                        <bold>&nbsp;Distribuidora:</bold>
+                                    </a>
+                                    <h4>&nbsp;Celesc</h4>
+                                    <br>
+                                    <a>
+                                        <bold>&nbsp;Categoria:</bold>
+                                    </a>
+                                    <br>
+                                    <h4>&nbsp;B1</h4>
+                                    <br>
+                                    <a>
+                                        <bold>&nbsp;Energia R$/kWh:</bold>
+                                    </a>
+                                    <br>
+                                    <h4>&nbsp;0,50599</h4>
+                                    
+                                    <br>
+                                </center>
+                            </div>
+                        </div>
+                        </div>
+                
 
+                <!-- Content Row -->
+                <div class="row">
 
+                    <!-- Area Chart -->
+                    <div class="col-xl-12 col-lg-7">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div
+                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Histórico de Consumo kWh</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="myAreaChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             
