@@ -1,2 +1,4 @@
 node_modules
+data/*.csv
 .ipynb_checkpoints
+__pycache__
