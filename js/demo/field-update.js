@@ -17,7 +17,7 @@ $(document).ready(function () {
                         //var date = new Date(datarow.timestamp * 1000)
                         //const label = date.getMonth() + '/' + date.getYear()
 
-                        const temperature = datarow.temperature + ' °C'
+                        const temperature = datarow.internal_temperature + ' °C'
                         const voltage = datarow.voltage + ' V'
                         const current = datarow.current + ' A'
                         const status = datarow.status + ''
