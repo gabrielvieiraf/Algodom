@@ -54,6 +54,10 @@ function addData(chart, label, data) {
 }
 
 function updateValue(elementId, newValue) {
-  document.getElementById(elementId).innerHTML = newValue
+  element = document.getElementById(elementId)
+  if (element !== null) {
+      element.innerHTML = newValue
+    }
 };
+
 
